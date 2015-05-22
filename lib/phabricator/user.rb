@@ -8,7 +8,7 @@ module Phabricator
     attr_accessor :name
 
     def self.populate_all
-      response = client.request(:post, 'user.query')
+      response = client.request('user.query')
 
       response['result'].each do |data|
         user = User.new(data)

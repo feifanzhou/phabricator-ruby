@@ -29,7 +29,7 @@ module Phabricator::Maniphest
     attr_accessor :title, :description, :priority
 
     def self.from_id(task_id)
-      response = client.request(:post, 'maniphest.info', {
+      response = client.request('maniphest.info', {
         task_id: task_id
       })
 
@@ -38,7 +38,7 @@ module Phabricator::Maniphest
     end
 
     def self.create(title, description=nil, projects=[], priority='normal', owner=nil, ccs=[], other={})
-      response = client.request(:post, 'maniphest.createtask', {
+      response = client.request('maniphest.createtask', {
         title: title,
         description: description,
         priority: Priority.send(priority),

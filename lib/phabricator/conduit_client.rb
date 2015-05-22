@@ -44,9 +44,9 @@ module Phabricator
       }
     end
 
-    def request(http_method, method, data={})
+    def request(conduit_method, data={})
       # TODO: validation on http_method
-      self.send(http_method, method, data.merge(__conduit__: @conduit))
+      self.send(:post, conduit_method, data.merge(__conduit__: @conduit))
     end
 
     private
