@@ -5,7 +5,7 @@ module Phabricator
     @@cached_users = {}
 
     attr_reader :phid
-    attr_accessor :name
+    attr_accessor :name, :email
 
     def self.populate_all
       response = client.request('user.query')
@@ -28,6 +28,7 @@ module Phabricator
     def initialize(attributes)
       @phid = attributes['phid']
       @name = attributes['userName']
+      @email = attributes['primaryEmail']
     end
 
     private
