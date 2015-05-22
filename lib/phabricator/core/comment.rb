@@ -11,6 +11,9 @@ module Phabricator::Core
       @dateCreated = attributes['dateCreated']  # UNIX timestamp
       @text = attributes['comments']
       @authorPHID = attributes['authorPHID']
+
+      # This value might be needed for feed webhook pushes
+      @transactionPHID = attributes['transactionPHID']
     end
 
     def author
