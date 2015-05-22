@@ -61,6 +61,25 @@ module Phabricator::Maniphest
       @priority = attributes['priority']
     end
 
+    def comments
+      response = client.request('maniphest.gettasktransactions', {
+        ids: [self.id]
+      })
+
+      data = response['result']
+      comments_data = data.select { |entry| entry['transactionType'] == 'core:comment' }
+      comments_data.map { |comment_data| Phabricator::Core::Comment.new(comment_data) }
+    end
+
+    def add_comment(comment)
+      response = client.request('maniphest.update', {
+        id: self.id,
+        comments: (comment.is_a? Phabricator::Core::Comment) ? comment.text : comment
+      })
+      # Result is JSON of the task itself. Not much we can do with it here
+      response['result']
+    end
+
     private
 
     def self.client
