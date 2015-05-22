@@ -6,8 +6,8 @@ require 'phabricator/version'
 Gem::Specification.new do |spec|
   spec.name          = 'phabricator'
   spec.version       = Phabricator::VERSION
-  spec.authors       = ['Amber Feng']
-  spec.email         = ['amber.feng@gmail.com']
+  spec.authors       = ['Feifan Zhou']
+  spec.email         = ['feifan@me.com']
   spec.description   = %q{Wrapper around Phabricator's Conduit API}
   spec.summary       = %q{Wrapper around Phabricator's Conduit API}
   spec.homepage      = ''

@@ -28,6 +28,15 @@ module Phabricator::Maniphest
     attr_reader :id
     attr_accessor :title, :description, :priority
 
+    def self.from_id(task_id)
+      response = client.request(:post, 'maniphest.info', {
+        task_id: task_id
+      })
+
+      data = response['result']
+      self.new(data)
+    end
+
     def self.create(title, description=nil, projects=[], priority='normal', owner=nil, ccs=[], other={})
       response = client.request(:post, 'maniphest.createtask', {
         title: title,
