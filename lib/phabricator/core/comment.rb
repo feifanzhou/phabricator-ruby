@@ -5,7 +5,7 @@ require 'phabricator/user'
 
 module Phabricator::Core
   class Comment
-    attr_reader :text
+    attr_reader :text, :transactionPHID
     def initialize(attributes)
       @taskID = attributes['taskID']
       @dateCreated = attributes['dateCreated']  # UNIX timestamp

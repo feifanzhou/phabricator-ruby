@@ -81,6 +81,10 @@ module Phabricator::Maniphest
       response['result']
     end
 
+    def comment_from_transaction(transaction_phid)
+      comments.find { |comment| comment.transaction_phid == transaction_phid }
+    end
+
     private
 
     def self.client
