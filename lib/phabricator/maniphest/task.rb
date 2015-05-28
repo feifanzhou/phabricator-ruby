@@ -28,7 +28,8 @@ module Phabricator::Maniphest
     attr_reader :id
     attr_accessor :title, :description, :priority
 
-    def self.from_id(task_id)
+    def self.find_by_id(task_id)
+      # TODO: Cache results
       response = client.request('maniphest.info', {
         task_id: task_id
       })
