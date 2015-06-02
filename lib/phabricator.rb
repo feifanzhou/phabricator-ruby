@@ -8,3 +8,7 @@ end
 
 require 'phabricator/conduit_client'
 require 'phabricator/maniphest'
+require 'phabricator/project'
+require 'phabricator/user'
+require 'phabricator/core/comment'
+require 'phabricator/maniphest/task'
