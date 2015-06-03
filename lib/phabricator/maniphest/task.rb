@@ -86,5 +86,9 @@ module Phabricator::Maniphest
     def self.client
       @client ||= Phabricator::ConduitClient.instance
     end
+
+    def client
+      Task.client
+    end
   end
 end
