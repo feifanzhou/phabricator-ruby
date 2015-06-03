@@ -1,5 +1,3 @@
-require 'phabricator/conduit_client'
-
 module Phabricator
   class User
     @@cached_users_by_phid = {}

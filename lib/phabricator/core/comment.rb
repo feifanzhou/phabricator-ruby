@@ -1,8 +1,5 @@
 require 'date'
 
-require 'phabricator/conduit_client'
-require 'phabricator/user'
-
 module Phabricator::Core
   class Comment
     attr_reader :text, :transactionPHID

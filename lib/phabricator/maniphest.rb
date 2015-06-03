@@ -1,3 +1,3 @@
 module Phabricator::Maniphest; end;
 
-require 'phabricator/maniphest/task'
+require_relative 'maniphest/task'

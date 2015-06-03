@@ -1,7 +1,3 @@
-require 'phabricator/conduit_client'
-require 'phabricator/project'
-require 'phabricator/user'
-
 module Phabricator::Maniphest
   class Task
     module Priority

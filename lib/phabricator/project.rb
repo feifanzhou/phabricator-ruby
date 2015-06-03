@@ -1,5 +1,3 @@
-require 'phabricator/conduit_client'
-
 module Phabricator
   class Project
     @@cached_projects = {}
