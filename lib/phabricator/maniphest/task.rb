@@ -63,7 +63,7 @@ module Phabricator::Maniphest
         ids: [self.id]
       })
 
-      data = response['result']
+      data = response['result']["#{self.id}"]
       comments_data = data.select { |entry| entry['transactionType'] == 'core:comment' }
       comments_data.map { |comment_data| Phabricator::Core::Comment.new(comment_data) }
     end
