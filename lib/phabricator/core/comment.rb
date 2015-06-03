@@ -17,6 +17,10 @@ module Phabricator::Core
       Phabricator::User.find_by_phid(@authorPHID)
     end
 
+    def transaction_phid
+      @transactionPHID
+    end
+
     def date_created
       Time.at(@dateCreated.to_i).to_datetime
     end
